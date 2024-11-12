@@ -10,6 +10,9 @@ sources:
         columns:
           - name: products_id
             description: products references PK
+            tests:
+              - unique
+              - not_null
           - name: purchase_price
             description: price of purchase 
         # identifier: product
@@ -17,6 +20,11 @@ sources:
       - name: raw_gz_sales
         description: Sales table
         columns:
+          - name: Pkey
+            description: uKey
+            tests:
+              - unique
+              - not_null
           - name: date_date
             description: date of order
           - name: orders_id
@@ -27,13 +35,15 @@ sources:
             description: turnover
           - name: quantity
             description: amount of products ordered
-
         # identifier: sales
       - name: raw_gz_ship
         description: Shipping table
         columns:
           - name: orders_id
             description: orders references PK
+            tests:
+              - unique
+              - not_null
           - name: shipping_fee
             description: shipping turnover
           - name: logcost
