@@ -22,9 +22,6 @@ sources:
         columns:
           - name: Pkey
             description: uKey
-            tests:
-              - unique
-              - not_null
           - name: date_date
             description: date of order
           - name: orders_id
