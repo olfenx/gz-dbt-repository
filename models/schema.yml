@@ -1,16 +1,16 @@
 version: 2
 
 sources:
-  - name: gz_raw_data
-    schema: Raw 
+  - name: Raw
+    schema: gz_raw_data
     description: dataset of Circle data (French eco-responsible)
     tables:
-      - name: raw_gz_product
-        schema: Product
+      - name: Product
         description: Product table
-      - name: raw_gz_sales
-        schema: Sales
+        identifier: raw_gz_product
+      - name: Sales
         description: Sales table
-      - name: raw_gz_ship
-        schema: Ship
+        identifier: raw_gz_sales  
+      - name: Ship
         description: Shipping table
+        identifier: raw_gz_ship
