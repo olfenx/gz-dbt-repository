@@ -6,5 +6,4 @@ SELECT
     ROUND(SUM(purchase_cost),2) AS Purchase_Cost,
     ROUND(SUM(margin),2) AS Margin
 FROM {{ ref('int_sales_margin') }}
-GROUP BY
-    orders_id,date_date
+GROUP BY orders_id,date_date
