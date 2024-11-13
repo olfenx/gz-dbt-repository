@@ -1,0 +1,50 @@
+version: 2
+
+sources:
+  - name: gz_raw_data
+    description: dataset of Circle data (French eco-responsible)
+    tables:
+
+      - name: raw_gz_product
+        description: Product table
+        columns:
+          - name: products_id
+            description: products references PK
+            tests:
+              - unique
+              - not_null
+          - name: purchase_price
+            description: price of purchase 
+        # identifier: product
+
+      - name: raw_gz_sales
+        description: Sales table
+        columns:
+          - name: Pkey
+            description: uKey
+          - name: date_date
+            description: date of order
+          - name: orders_id
+            description: orders references PK
+          - name: products_id
+            description: product reference
+          - name: revenue
+            description: turnover
+          - name: quantity
+            description: amount of products ordered
+        # identifier: sales
+      - name: raw_gz_ship
+        description: Shipping table
+        columns:
+          - name: orders_id
+            description: orders references PK
+            tests:
+              - unique
+              - not_null
+          - name: shipping_fee
+            description: shipping turnover
+          - name: logcost
+            description: cost for logistics
+          - name: ship_cost
+            description: cost for shipping
+        # identifier: ship
