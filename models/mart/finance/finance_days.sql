@@ -7,4 +7,3 @@ SELECT
     ROUND(SUM(operational_margin),2) AS OP_Margin
 FROM {{ ref('int_orders_operational') }}
 GROUP BY Date
-HAVING Date = "2021-09-30"
